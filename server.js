@@ -30,10 +30,5 @@ db.connect(err => {
 
 
 init = () => {
-    console.log("|---------------------------------|")
-    console.log("|                                 |")
-    console.log("|        EMPLOYEE MANAGER         |")
-    console.log("|                                 |")
-    console.log("|---------------------------------|")
     getInputTask();
 };
