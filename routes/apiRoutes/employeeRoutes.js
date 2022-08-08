@@ -3,6 +3,7 @@ const {
     addEmployee,
     updateEmployeeRole,
     updateManager,
+    employeeBYManager,
     employeeBYDepartment,
     deleteEmployee
 } = require('./../../lib/employeeGRUD')
@@ -23,6 +24,10 @@ employeeGRUD = (choices) => {
 
     if (choices === "Update an employee manager") {
         updateManager();
+    }
+
+    if (choices === "View employees by manager") {
+        employeeBYManager();
     }
 
     if (choices === "View employees by department") {
