@@ -2,7 +2,7 @@ const express = require('express');
 const PORT = process.env.PORT || 3001;
 const app = express();
 const db = require('./db/connection');
-const apiRoutes = require('./routes/apiRoutes');
+const dataRoutes = require('./routes/dataRoutes');
 const getInputTask = require("./lib/UserInputTask");
 
 // Express middleware
@@ -10,8 +10,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('db'));
 
-// Use apiRoutes
-app.use('/api', apiRoutes);
+// Use dataRoutes
+app.use('/grud', dataRoutes);
 
 // Default response for any other request (Not Found)
 app.use((req, res) => {

@@ -1,12 +1,16 @@
+// call function from other file to in file.
 const {
   showDepartments,
   addDepartment,
   deleteDepartment,
-  viewBudget
+  viewemployeeBYDepartment,
+  viewdepartmentBudget
 } = require('./../../lib/departmentGRUD')
 
+// recieve information after user input and apply for condition checking.
 departmentGRUD = (choices) => {
 
+  // check condition before calling function.
   if (choices === "View all departments") {
     showDepartments();
   }
@@ -19,11 +23,15 @@ departmentGRUD = (choices) => {
     deleteDepartment();
   }
 
+  if (choices === "View employees by department") {
+    viewemployeeBYDepartment();
+  }
+
   if (choices === "View department budgets") {
-    viewBudget();
+    viewdepartmentBudget();
   }
 
 };
 
-
+// export function to use in the other file.
 module.exports = departmentGRUD;

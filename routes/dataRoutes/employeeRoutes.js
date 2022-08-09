@@ -1,15 +1,16 @@
+// call function from other file to in file.
 const {
     showEmployees,
     addEmployee,
-    updateEmployeeRole,
     updateManager,
-    employeeBYManager,
-    employeeBYDepartment,
-    deleteEmployee
+    deleteEmployee,
+    viewemployeeBYManager
 } = require('./../../lib/employeeGRUD')
 
+// recieve information after user input and apply for condition checking.
 employeeGRUD = (choices) => {
 
+    // check condition before calling function.
     if (choices === "View all employees") {
         showEmployees();
     }
@@ -18,26 +19,19 @@ employeeGRUD = (choices) => {
         addEmployee();
     }
 
-    if (choices === "Update an employee role") {
-        updateEmployeeRole();
-    }
-
     if (choices === "Update an employee manager") {
         updateManager();
-    }
-
-    if (choices === "View employees by manager") {
-        employeeBYManager();
-    }
-
-    if (choices === "View employees by department") {
-        employeeBYDepartment();
     }
 
     if (choices === "Delete an employee") {
         deleteEmployee();
     }
 
+    if (choices === "View employees by manager") {
+        viewemployeeBYManager();
+    }
+
 };
 
+// export function to use in the other file.
 module.exports = employeeGRUD;
